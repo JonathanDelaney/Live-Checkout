@@ -4,30 +4,12 @@ const asyncCheckout = async () => {
   const clientKey = await getClientKey();
   const paymentMethodsResponse = await getPaymentMethods();
   const configuration = {
-    environment: "test",
+    environment: "live",
     clientKey: clientKey, // Mandatory. clientKey from Customer Area
     paymentMethodsResponse,
-    paymentMethodsConfiguration: {
+    onChange: (state, component) => {
+      updateStateContainer(state); // Demo purposes only
     },
-    // amount: {
-    //   currency: "USD",
-    //   value: 4900
-    // },
-    // onChange: (state, component) => {
-    //   updateStateContainer(state); // Demo purposes only
-    // },
-    // // onError: (error) => {
-    // //   console.log(error);
-    // //   dropin.setStatus("ready");
-    // // },
-    // // onCancel: (error) => {
-    // //   console.log("Cancel event");
-    // //   dropin.setStatus("ready");
-    // // },
-    // onActionHandled: (data) => {
-    //   console.log("Action handled");
-    //   console.log(data);
-    // },
     onSubmit: async (state, dropin) => {
       console.dir(state);
       const response =  await makePayment(state.data);
@@ -40,29 +22,29 @@ const asyncCheckout = async () => {
         dropin.setStatus("error", { message: "Oops, try again please!" });
       }
     },
-    // onAdditionalDetails: async (state, dropin) => {
-    //   console.log(state.data);
-    //   const response = await submitDetails(state.data);
-    //   if (response.action) {
-    //     console.log(response);
-    //     dropin.handleAction(response.action);
-    //   } else if (response.resultCode === "Authorised") {
-    //     dropin.setStatus("success", { message: "Payment successful!" });
-    //     setTimeout(function () {
-    //       dropin.setStatus("ready");
-    //     }, 2000);
-    //   } else if (response.resultCode !== "Authorised") {
-    //     dropin.setStatus("error", { message: "Oops, try again please!" });
-    //     setTimeout(function () {
-    //       dropin.setStatus("ready");
-    //     }, 2000);
-    //   }
-    // },
-    // paymentMethodsConfiguration: {
-    //   card: {
-    //     enableStoreDetails: true
-    //   }
-    // }
+    onAdditionalDetails: async (state, dropin) => {
+      console.log(state.data);
+      const response = await submitDetails(state.data);
+      if (response.action) {
+        console.log(response);
+        dropin.handleAction(response.action);
+      } else if (response.resultCode === "Authorised") {
+        dropin.setStatus("success", { message: "Payment successful!" });
+        setTimeout(function () {
+          dropin.setStatus("ready");
+        }, 2000);
+      } else if (response.resultCode !== "Authorised") {
+        dropin.setStatus("error", { message: "Oops, try again please!" });
+        setTimeout(function () {
+          dropin.setStatus("ready");
+        }, 2000);
+      }
+    },
+    paymentMethodsConfiguration: {
+      card: {
+        enableStoreDetails: true
+      }
+    }
   };
   console.log(paymentMethodsResponse);
   // 1. Create an instance of AdyenCheckout
@@ -76,21 +58,6 @@ const asyncCheckout = async () => {
     })
     .mount("#dropin-container");
   console.log(dropin);
-
-  let isRecurring = false;
-  function makeRecurring () {
-    if (isRecurring === false) {
-      paymentsDefaultConfig.recurringProcessingModel = "Subscription";
-      isRecurring = true;
-    } else {
-      paymentsDefaultConfig.recurringProcessingModel = "CardOnFile";
-      isRecurring = false;
-    }
-  };
-  const reSwitch = document.getElementById("recurring");
-  reSwitch.addEventListener("click", makeRecurring)
-
-
 
   // Redirect handling code starts here till the end
 
