@@ -8,9 +8,6 @@ const asyncCheckout = async () => {
     clientKey: clientKey, // Mandatory. clientKey from Customer Area
     paymentMethodsResponse,
     paymentMethodsConfiguration: {
-      card: {
-        name: "Carte "
-      }
     },
     // amount: {
     //   currency: "USD",
