@@ -17,7 +17,7 @@ function submitDetails() {
 
     $apikey = process.env.CHECKOUT_APIKEY;
     $merchantAccount = process.env.MERCHANT_ACCOUNT;
-    $url = "https://checkout-test.adyen.com/v68/payments/details";
+    $url = "https://14bc048714e340cf-AdyenTechSupport-checkout-live.adyenpayments.com/checkout/v70/payments/details";
 
     $data = [
         'details' => $details
