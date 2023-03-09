@@ -5,7 +5,7 @@
  */
 function getClientKey() {
 	// Retrieves the clientKey from the .env file
-    $clientKey = getenv('CLIENT_KEY');
+    $clientKey = process.env.CLIENT_KEY;
 
     $data = [
     	"clientKey" => $clientKey
