@@ -11,10 +11,10 @@ const shopperReference = "xyz";
 const paymentMethodsConfig = {
   reference: Math.random(),
   countryCode: "NL",
-  shopperLocale: "fr-FR",
+  shopperLocale: "en-GB",
   shopperReference: shopperReference,
   amount: {
-    value: 4900,
+    value: 100,
     currency: "EUR",
   }
 };
@@ -22,7 +22,7 @@ const paymentMethodsConfig = {
 let paymentsDefaultConfig = {
     amount: {
         currency: "EUR",
-        value: 4900
+        value: 100
     },
     returnUrl: setReturnUrl(),
     // blockedPaymentMethods: ["scheme"],
@@ -101,6 +101,9 @@ const makePayment = (paymentMethod, config = {}) => {
   console.log(paymentsConfig);
   const paymentRequest = { ...paymentsConfig, ...paymentMethod };
   console.log(paymentMethod);
+  if (paymentRequest.amount.value > 100) {
+    return "Too much"
+  };
   return httpPost("payments", paymentRequest)
     .then((response) => {
       if (response.error) throw "Payment initiation failed";
