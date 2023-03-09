@@ -10,6 +10,7 @@ const shopperReference = "xyz";
 
 const paymentMethodsConfig = {
   reference: Math.random(),
+  merchantAccount: "JoneAzpillaga",
   countryCode: "NL",
   shopperLocale: "en-GB",
   shopperReference: shopperReference,
@@ -29,7 +30,7 @@ let paymentsDefaultConfig = {
     channel: "web",
     // origin: setReturnUrl(),
     reference : "xyz",
-    merchantAccount: "AdyenTechSupport_2021_Jonathand_TEST",
+    merchantAccount: "JoneAzpillaga",
     shopperReference : shopperReference,
     shopperEmail: "test@test.com",
     countryCode : "NL",
