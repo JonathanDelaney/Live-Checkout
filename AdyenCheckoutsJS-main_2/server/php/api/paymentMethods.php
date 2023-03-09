@@ -18,7 +18,7 @@ function getPaymentMethods() {
 
     $apikey = process.env.CHECKOUT_APIKEY;
     $merchantAccount = process.env.MERCHANT_ACCOUNT;
-    $url = "https://checkout-test.adyen.com/v69/paymentMethods";
+    $url = "https://14bc048714e340cf-AdyenTechSupport-checkout-live.adyenpayments.com/checkout/v70/paymentMethods";
 
     $data = [
         'merchantAccount' => $merchantAccount,
