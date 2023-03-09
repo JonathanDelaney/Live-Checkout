@@ -75,7 +75,7 @@ const asyncCheckout = async () => {
 
   async function handleRedirectResult(redirectResult) {
     const checkout = await AdyenCheckout({
-      environment: "test",
+      environment: "live",
       clientKey: clientKey
     });
     const dropin = checkout
