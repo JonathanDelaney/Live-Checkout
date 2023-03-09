@@ -8,30 +8,11 @@ getClientKey().then((clientKey) => {
   function initiateSession() {
     sessionsDropin().then((response) => {
       const configuration = {
-        environment: "test", // Change to 'live' for the live environment.
+        environment: "live", // Change to 'live' for the live environment.
         clientKey: clientKey, // Public key used for client-side authentication: https://docs.adyen.com/development-resources/client-side-authentication
         session: {
           id: response.id, // Unique identifier for the payment session.
           sessionData: response.sessionData, // The payment session data.
-        },
-        paymentMethodsConfiguration: {
-          card: {
-            billingAddressRequired: true,
-            billingAddressMode: true,
-            enableStoreDetails: true
-          },
-          ideal: {
-            issuers: [
-              {
-                  "id": "1121",
-                  "name": "Test Issuer"
-              },
-              {
-                  "id": "1154",
-                  "name": "Test Issuer 5"
-              }
-            ]
-          }
         },
         onPaymentCompleted: (result, dropin) => {
           console.log(result);
@@ -282,7 +263,7 @@ getClientKey().then((clientKey) => {
 
   async function handleRedirect() {
     const configuration = {
-      environment: "test", // Change to 'live' for the live environment.
+      environment: "live", // Change to 'live' for the live environment.
       clientKey: clientKey, // Public key used for client-side authentication: https://docs.adyen.com/development-resources/client-side-authentication
       session: {
         id: sessionId, // Retreived identifier for the payment completion on redirect.
