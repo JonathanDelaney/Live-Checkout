@@ -12,7 +12,7 @@ getClientKey().then((clientKey) => {
     // 1. Create an instance of AdyenCheckout
       console.log(paymentMethodsResponse);
       const checkout = await AdyenCheckout({
-          environment: 'test',
+          environment: 'live',
           locale: "en-US",
           clientKey: clientKey, // Mandatory. clientKey from Customer Area
           // paymentMethodsResponse,
@@ -28,7 +28,7 @@ getClientKey().then((clientKey) => {
             region: "EU",
             publicKeyId: "SANDBOX-AGFEQXVLKMSIJNVT4AD7PAGT"
           },
-          environment: 'test',
+          environment: 'live',
           returnUrl: 'http://localhost:3002/amazonpay?second=false'
       }).mount('#amazonpay_button-container');
     })
@@ -37,7 +37,7 @@ getClientKey().then((clientKey) => {
   async function handleAmazonRedirect(amazonCheckoutSessionId) {
     getPaymentMethods().then(async (paymentMethodsResponse) => {
       const checkout = await AdyenCheckout({
-        environment: "test",
+        environment: "live",
         clientKey: clientKey,
         // paymentMethodsResponse  
       });
@@ -64,7 +64,7 @@ getClientKey().then((clientKey) => {
   async function handleSecondAmazonRedirect(amazonCheckoutSessionId) {
     getPaymentMethods().then(async (paymentMethodsResponse) => {
       const checkout = await AdyenCheckout({
-        environment: "test",
+        environment: "live",
         clientKey: clientKey,
         // paymentMethodsResponse  
       });
