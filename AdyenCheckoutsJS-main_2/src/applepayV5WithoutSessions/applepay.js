@@ -1,7 +1,7 @@
 getClientKey().then((clientKey) => {
   getPaymentMethods().then(async (paymentMethodsResponse) => {
     const configuration = {
-      environment: "test",
+      environment: "live",
       clientKey: clientKey, // Mandatory. clientKey from Customer Area
       paymentMethodsResponse,
 
