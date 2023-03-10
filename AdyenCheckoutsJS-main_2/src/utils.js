@@ -35,11 +35,11 @@ let paymentsDefaultConfig = {
     shopperEmail: "test@test.com",
     countryCode : "NL",
     shopperLocale: "en-GB",
+    shopperInteraction: "Ecommerce",
     // storePaymentMethodMode: "enabled",
     // storePaymentMethod : true,
     // redirectFromIssuerMethod: "GET",
     // recurringProcessingModel : "CardOnFile",
-    // shopperInteraction: "Ecommerce",
     // authenticationData : {
     //
     // },
