@@ -9,7 +9,7 @@ getClientKey().then((clientKey) => {
     sessionsDropin().then((response) => {
       console.log(response);
       const configuration = {
-        environment: "test", // Change to 'live' for the live environment.
+        environment: "live", // Change to 'live' for the live environment.
         clientKey: clientKey, // Public key used for client-side authentication: https://docs.adyen.com/development-resources/client-side-authentication
         session: {
           id: response.id, // Unique identifier for the payment session.
@@ -83,7 +83,7 @@ getClientKey().then((clientKey) => {
 
   async function handleRedirect() {
     const configuration = {
-      environment: "test", // Change to 'live' for the live environment.
+      environment: "live", // Change to 'live' for the live environment.
       clientKey: clientKey, // Public key used for client-side authentication: https://docs.adyen.com/development-resources/client-side-authentication
       session: {
         id: sessionId, // Retreived identifier for the payment completion on redirect.
