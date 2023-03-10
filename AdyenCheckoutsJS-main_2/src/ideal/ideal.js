@@ -37,16 +37,6 @@ getClientKey().then((clientKey) => {
       });
       const idealComponent = checkout.create('ideal', {
           // Optional configuration
-          issuers: [
-            {
-                "id": "1121",
-                "name": "Test Issuer"
-            },
-            {
-                "id": "1154",
-                "name": "Test Issuer 5"
-            }
-          ],
           showPayButton: true
       }).mount('#card-container');
   })
