@@ -1,6 +1,6 @@
 // Create a config object for SDK.
 var sdkConfigObj = {
-  context: "test",
+  context: "live",
 };
 
 makeSessionsCall().then((response) => {
