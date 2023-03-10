@@ -9,7 +9,7 @@ getClientKey().then((clientKey) => {
     const paymentMethodsResponse = response;
     // 1. Create an instance of AdyenCheckout
       const checkout = await AdyenCheckout({
-          environment: 'test',
+          environment: 'live',
           // locale: "en-US",
           clientKey: clientKey, // Mandatory. clientKey from Customer Area
           paymentMethodsResponse,
@@ -69,7 +69,7 @@ getClientKey().then((clientKey) => {
   }
   async function handleRedirectResult(redirectResult) {
     const checkout = await AdyenCheckout({
-      environment: "test",
+      environment: "live",
       clientKey: clientKey
     });
     const dropin = checkout
