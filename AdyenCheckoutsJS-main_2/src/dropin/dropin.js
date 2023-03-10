@@ -43,6 +43,13 @@ const asyncCheckout = async () => {
     paymentMethodsConfiguration: {
       card: {
         enableStoreDetails: true
+      },
+      applepay: {
+        countryCode: "NL",
+        amount: {
+          currency: "EUR",
+          value: 100
+        }
       }
     }
   };
@@ -101,7 +108,7 @@ const asyncCheckout = async () => {
 
   async function handleMDPaRes(MD, PaRes) {
     const checkout = new AdyenCheckout({
-      environment: "test",
+      environment: "live",
       clientKey: clientKey
     });
     const dropin = checkout
