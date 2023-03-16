@@ -1,6 +1,7 @@
 const { CHECKOUT_APIKEY, CHECKOUT_URL, MERCHANT_ACCOUNT } = require('./config');
 
 module.exports = (endpoint, request) => {
+    console.log("endpoint ", endpoint)
     const body = JSON.stringify({
         merchantAccount: MERCHANT_ACCOUNT,
         ...request
