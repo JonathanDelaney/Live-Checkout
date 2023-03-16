@@ -115,8 +115,7 @@ const makePayment = (paymentMethod, config = {}) => {
 
 // Make payments/details call
 const submitDetails = (details) => {
-  console.log("submitDetails");
-  return httpPost("/payments/details", details)
+  return httpPost("/paymentDetails", details)
     .then((response) => {
       return response;
     })
