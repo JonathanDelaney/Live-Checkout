@@ -49,10 +49,6 @@ const asyncCheckout = async () => {
         amount: {
           currency: "EUR",
           value: 100
-        },
-        configuration: {
-          merchantName: "Different name",
-          merchantIdentifier: "000000000210710"
         }
       }
     }
