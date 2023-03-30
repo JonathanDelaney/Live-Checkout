@@ -61,7 +61,10 @@ const asyncCheckout = async () => {
   const dropin = checkout
     .create("dropin", {
       showStorePaymentMethodButton: true,
-      showRemovePaymentMethodButton: true
+      showRemovePaymentMethodButton: true,
+      onSelect: (component) => {
+        console.log(component.props.type);
+      }
     })
     .mount("#dropin-container");
   console.log(dropin);
