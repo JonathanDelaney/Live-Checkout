@@ -60,6 +60,9 @@ getClientKey().then((clientKey) => {
         amount: {
           currency: "EUR",
           value: 100
+        },
+        onAuthorized: (data) => {
+          console.log(data);
         }
       }).mount("#applepay-container");
   })
