@@ -5,7 +5,7 @@ getClientKey().then((clientKey) => {
         environment: "live",
         paymentMethodsResponse,
         amount: {
-          currency: "USD",
+          currency: "EUR",
           value: 100
         },
         onSubmit: (state, component) => {
