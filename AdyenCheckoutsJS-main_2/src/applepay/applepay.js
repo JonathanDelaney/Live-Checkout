@@ -61,11 +61,11 @@ getClientKey().then((clientKey) => {
           currency: "EUR",
           value: 100
         },
-//         onAuthorized: (data) => {
-//           console.log(data);
+        onAuthorized: (data) => {
+          console.log(data);
 //           const authEl = document.getElementById("on-authorised");
 //           authEl.innerHtml = JSON.stringify(data);
-//         }
+        }
       }).mount("#applepay-container");
   })
 });
