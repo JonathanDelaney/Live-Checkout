@@ -30,7 +30,6 @@
               <!-- Google Pay Component will be rendered here -->
             </div>
             <div id="result-container"></div>
-            <div id="on-authorised"></div>
           </div>
         </div>
 
@@ -44,6 +43,11 @@
               >Checkout Components documentation</a
             >.
           </p>
+          <p>
+            Here is the event:
+            <br>
+            <div id="on-authorised"></div>
+          </p>
         </div>
       </div>
 
@@ -55,7 +59,9 @@
             aria-label="Copy sample code"
           ></button>
         </div>
-        <pre class="source-code"><code>const checkout = await AdyenCheckout({});
+        <pre class="source-code"><code>
+        
+const checkout = await AdyenCheckout({});
 
 const googlepay = checkout
     .create('paywithgoogle', {
