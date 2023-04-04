@@ -61,10 +61,15 @@ getClientKey().then((clientKey) => {
           currency: "EUR",
           value: 100
         },
-        onAuthorized: (data) => {
-          console.log(data);
-//           const authEl = document.getElementById("on-authorised");
-//           authEl.innerHtml = JSON.stringify(data);
+        onClick: (resolve, reject) => {
+            console.log('Apple Pay - Button clicked');
+            resolve();
+        },
+        onAuthorized: (resolve, reject, event) => {
+            console.log('Apple Pay onAuthorized', event);
+            const authEl = document.getElementById("on-authorised");
+            authEl.innerHtml = JSON.stringify(data);
+            resolve();
         }
       }).mount("#applepay-container");
   })
