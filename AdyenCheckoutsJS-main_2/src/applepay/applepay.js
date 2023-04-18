@@ -68,8 +68,8 @@ getClientKey().then((clientKey) => {
         onAuthorized: (resolve, reject, event) => {
             console.log('Apple Pay onAuthorized', event);
             const authEl = document.getElementById("on-authorised");
-            authEl.innerHtml = JSON.stringify(event);
-            resolve();
+            authEl.innerText = JSON.stringify(event);
+//             resolve();
         }
       }).mount("#applepay-container");
   })
