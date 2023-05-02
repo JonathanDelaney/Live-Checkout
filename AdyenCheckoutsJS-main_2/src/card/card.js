@@ -53,9 +53,9 @@ getClientKey().then((clientKey) => {
       });
       const cardComponent = checkout.create('card', {
           showPayButton: true,
-          // onFieldValid: (value) => {
-          //   console.log(value);
-          // },
+          onBinLookup: (value) => {
+            console.log(value);
+          },
           // brands: [],
           // hasHolderName: true,
           // holderNameRequired: true
