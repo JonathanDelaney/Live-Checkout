@@ -67,17 +67,17 @@ getClientKey().then((clientKey) => {
         },
         onAuthorized: (resolve, reject, event) => {
             console.log('Apple Pay onAuthorized', event);
-            updateResponseContainer(event);
+            document.getElementById('response').innerText = JSON.stringify(event, null, 2);
             resolve();
         },
         onShippingContactSelected: (resolve, reject, event) => {
             console.log('Apple Pay onShippingContactSelected event', event);
-            updateResponseContainer(event);
+            document.getElementById('response-two').innerText = JSON.stringify(event, null, 2);
             resolve();
         },
         onShippingMethodSelected: (resolve, reject, event) => {
             console.log('Apple Pay onShippingMethodSelected event', event);
-            updateResponseContainer(event);
+            document.getElementById('response-three').innerText = JSON.stringify(event, null, 2);
             resolve();
         },
       }).mount("#applepay-container");
