@@ -69,7 +69,17 @@ getClientKey().then((clientKey) => {
             console.log('Apple Pay onAuthorized', event);
             updateResponseContainer(event);
             resolve();
-        }
+        },
+        onShippingContactSelected: (resolve, reject, event) => {
+            console.log('Apple Pay onShippingContactSelected event', event);
+            updateResponseContainer(event);
+            resolve();
+        },
+        onShippingMethodSelected: (resolve, reject, event) => {
+            console.log('Apple Pay onShippingMethodSelected event', event);
+            updateResponseContainer(event);
+            resolve();
+        },
       }).mount("#applepay-container");
   })
 });
