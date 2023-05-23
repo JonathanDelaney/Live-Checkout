@@ -30,7 +30,6 @@ let paymentsDefaultConfig = {
     channel: "web",
     // origin: setReturnUrl(),
     reference : "xyz",
-    requiredShippingContactFields: ["postalAddress", "name"],
     merchantAccount: "JoneAzpillaga",
     shopperReference : shopperReference,
     shopperEmail: "test@test.com",
