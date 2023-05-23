@@ -41,6 +41,12 @@ a:hover {
   box-sizing: border-box;
 }
 
+.response {
+  border: 1px solid black;
+  min-width: 100px;
+  min-height: 100px;
+}
+
 /* Buttons */
 
 .button {
