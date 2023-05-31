@@ -8,9 +8,10 @@ getClientKey().then((clientKey) => {
           currency: "EUR",
           value: 100
         },
-//         onSubmit: (state, component) => {
-//           console.log(state);
-//           makePayment(state.data)
+        onSubmit: (state, component) => {
+          console.log(state);
+          delete state.data.browserInfo;
+          makePayment(state.data)
 //             .then((response) => {
 //               component.setStatus("loading");
 //               if (response.action) {
@@ -30,7 +31,7 @@ getClientKey().then((clientKey) => {
 //             .catch((error) => {
 //               throw Error(error);
 //             });
-//         },
+        },
         onAdditionalDetails: (state, dropin) => {
           submitDetails(state.data)
             .then((response) => {
