@@ -35,7 +35,7 @@ getClientKey().then((clientKey) => {
               });
           }
       });
-      const idealComponent = checkout.create('ideal', {
+      const idealComponent = checkout.create('onlineBanking_PL', {
           // Optional configuration
           showPayButton: true
       }).mount('#card-container');
