@@ -8,29 +8,29 @@ getClientKey().then((clientKey) => {
           currency: "EUR",
           value: 100
         },
-        onSubmit: (state, component) => {
-          console.log(state);
-          makePayment(state.data)
-            .then((response) => {
-              component.setStatus("loading");
-              if (response.action) {
-                component.handleAction(response.action);
-              } else if (response.resultCode === "Authorised") {
-                component.setStatus("success", { message: "Payment successful!" });
-                setTimeout(function () {
-                  component.setStatus("ready");
-                }, 2000);
-              } else if (response.resultCode !== "Authorised") {
-                component.setStatus("error", { message: "Oops, try again please!" });
-                setTimeout(function () {
-                  component.setStatus("ready");
-                }, 2000);
-              }
-            })
-            .catch((error) => {
-              throw Error(error);
-            });
-        },
+//         onSubmit: (state, component) => {
+//           console.log(state);
+//           makePayment(state.data)
+//             .then((response) => {
+//               component.setStatus("loading");
+//               if (response.action) {
+//                 component.handleAction(response.action);
+//               } else if (response.resultCode === "Authorised") {
+//                 component.setStatus("success", { message: "Payment successful!" });
+//                 setTimeout(function () {
+//                   component.setStatus("ready");
+//                 }, 2000);
+//               } else if (response.resultCode !== "Authorised") {
+//                 component.setStatus("error", { message: "Oops, try again please!" });
+//                 setTimeout(function () {
+//                   component.setStatus("ready");
+//                 }, 2000);
+//               }
+//             })
+//             .catch((error) => {
+//               throw Error(error);
+//             });
+//         },
         onAdditionalDetails: (state, dropin) => {
           submitDetails(state.data)
             .then((response) => {
