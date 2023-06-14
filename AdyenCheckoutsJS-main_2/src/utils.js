@@ -11,12 +11,12 @@ const shopperReference = "xyz";
 const paymentMethodsConfig = {
   reference: Math.random(),
   merchantAccount: "JoneAzpillaga",
-  countryCode: "NL",
+  countryCode: "SE",
   shopperLocale: "en-GB",
   shopperReference: shopperReference,
   amount: {
     value: 100,
-    currency: "EUR",
+    currency: "SEK",
   }
 };
 
@@ -33,7 +33,7 @@ let paymentsDefaultConfig = {
     merchantAccount: "JoneAzpillaga",
     shopperReference : shopperReference,
     shopperEmail: "test@test.com",
-    countryCode : "NL",
+    countryCode : "SE",
     shopperLocale: "en-GB",
     shopperInteraction: "Ecommerce",
     // storePaymentMethodMode: "enabled",
