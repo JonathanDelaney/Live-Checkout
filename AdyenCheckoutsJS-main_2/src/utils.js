@@ -14,6 +14,7 @@ const paymentMethodsConfig = {
   countryCode: "SE",
   shopperLocale: "en-GB",
   shopperReference: shopperReference,
+  channel: "iOS",
   amount: {
     value: 100,
     currency: "SEK",
