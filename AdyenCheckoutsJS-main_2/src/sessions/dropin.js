@@ -29,7 +29,7 @@ getClientKey().then((clientKey) => {
               value: 100
             },
             onClick: (resolve, reject) => {
-                console.log('Apple Pay - Button clicked');
+                alert('Apple Pay - Button clicked');
                 resolve();
             }
           }
