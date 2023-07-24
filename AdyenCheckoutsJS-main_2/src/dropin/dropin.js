@@ -49,6 +49,10 @@ const asyncCheckout = async () => {
         amount: {
           currency: "EUR",
           value: 100
+        },
+        onClick: (resolve, reject) => {
+            console.log('Apple Pay - Button clicked');
+            resolve();
         }
       }
     }
