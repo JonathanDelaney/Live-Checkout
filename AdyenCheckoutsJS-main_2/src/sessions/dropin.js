@@ -18,6 +18,22 @@ getClientKey().then((clientKey) => {
           console.log(result);
           updateResponseContainer(result);
         },
+        paymentMethodsConfiguration: {
+          card: {
+            enableStoreDetails: true
+          },
+          applepay: {
+            countryCode: "NL",
+            amount: {
+              currency: "EUR",
+              value: 100
+            },
+            onClick: (resolve, reject) => {
+                console.log('Apple Pay - Button clicked');
+                resolve();
+            }
+          }
+        }
         // onSubmit: (state, dropin) => {
         //   console.log("onSubmit");
         //   paymentsDefaultConfig.amount = {
