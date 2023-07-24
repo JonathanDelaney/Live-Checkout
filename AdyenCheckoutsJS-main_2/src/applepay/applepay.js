@@ -8,7 +8,7 @@ getClientKey().then((clientKey) => {
           currency: "EUR",
           value: 100
         },
-        locale: "fi-FI",
+        locale: "en-GB",
         onSubmit: (state, component) => {
           console.log(state);
           delete state.data.browserInfo;
@@ -58,7 +58,7 @@ getClientKey().then((clientKey) => {
       const checkout = await AdyenCheckout(configuration);
 
       const applePayComponent = checkout.create("applepay", {
-        countryCode: "FI",
+        countryCode: "NL",
         amount: {
           currency: "EUR",
           value: 100
