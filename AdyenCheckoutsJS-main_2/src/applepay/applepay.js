@@ -58,11 +58,11 @@ getClientKey().then((clientKey) => {
             document.getElementById('response-two').innerText = JSON.stringify(event, null, 2);
             resolve(event);
         },
-        onPaymentMethodSelected: (resolve, reject, event) => {
-            console.log('Apple Pay onPaymentMethodSelected event', event);
-            document.getElementById('response-four').innerText = JSON.stringify(event, null, 2);
-            resolve();
-        },
+        // onPaymentMethodSelected: (resolve, reject, event) => {
+        //     console.log('Apple Pay onPaymentMethodSelected event', event);
+        //     document.getElementById('response-four').innerText = JSON.stringify(event, null, 2);
+        //     resolve();
+        // },
         onShippingMethodSelected: (resolve, reject, event) => {
             console.log('Apple Pay onShippingMethodSelected event', event);
             document.getElementById('response-three').innerText = JSON.stringify(event, null, 2);
