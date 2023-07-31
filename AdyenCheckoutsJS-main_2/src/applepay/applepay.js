@@ -37,6 +37,19 @@ getClientKey().then((clientKey) => {
 
       const checkout = await AdyenCheckout(configuration);
 
+      const eventR = {
+        ApplePayLineItem: {
+            "label": "Subscription",
+            "amount": "1.00",
+            "type": "final",
+            "paymentTiming": "recurring",
+            "recurringPaymentStartDate": new Date("2022-01-01T00:00:00"),
+            "recurringPaymentIntervalUnit": "month",
+            "recurringPaymentIntervalCount": 6,
+            "recurringPaymentEndDate": new Date("2024-01-01T00:00:00"),
+        }
+      }
+
       const applePayComponent = checkout.create("applepay", {
         countryCode: "NL",
         amount: {
@@ -58,11 +71,11 @@ getClientKey().then((clientKey) => {
             document.getElementById('response-two').innerText = JSON.stringify(event, null, 2);
             resolve(event);
         },
-        // onPaymentMethodSelected: (resolve, reject, event) => {
-        //     console.log('Apple Pay onPaymentMethodSelected event', event);
-        //     document.getElementById('response-four').innerText = JSON.stringify(event, null, 2);
-        //     resolve();
-        // },
+        onPaymentMethodSelected: (resolve, reject, event) => {
+            console.log('Apple Pay onPaymentMethodSelected event', event);
+            document.getElementById('response-four').innerText = JSON.stringify(event, null, 2);
+            resolve(eventR);
+        },
         onShippingMethodSelected: (resolve, reject, event) => {
             console.log('Apple Pay onShippingMethodSelected event', event);
             document.getElementById('response-three').innerText = JSON.stringify(event, null, 2);
