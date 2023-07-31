@@ -56,7 +56,7 @@ getClientKey().then((clientKey) => {
         onShippingContactSelected: (resolve, reject, event) => {
             console.log('Apple Pay onShippingContactSelected event', event);
             document.getElementById('response-two').innerText = JSON.stringify(event, null, 2);
-            resolve();
+            resolve(event);
         },
         onPaymentMethodSelected: (resolve, reject, event) => {
             console.log('Apple Pay onPaymentMethodSelected event', event);
