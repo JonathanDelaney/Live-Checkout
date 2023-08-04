@@ -1,5 +1,6 @@
 // 0. Get clientKey
 const asyncCheckout = async () => {
+  const componentFlavour = await getValueOfConfig('flavour', 'flavour');
   console.log("theasyncmethod");
   const clientKey = await getClientKey();
   const paymentMethodsResponse = await getPaymentMethods();
@@ -58,9 +59,23 @@ const asyncCheckout = async () => {
     }
   };
   console.log(paymentMethodsResponse);
+  
   // 1. Create an instance of AdyenCheckout
   const checkout = await AdyenCheckout(configuration);
 
+
+
+ const selectedComponent = checkout
+                .create(componentFlavour)
+                .mount('#dropin-container');
+                checkout.submitDetails({details: {redirectResult}});
+
+            // Called if custom button is used
+            document.getElementById('customPayButton').addEventListener('click', function() {
+                selectedComponent.submit()
+            })
+  
+  
   // 2. Create and mount the Component
   const dropin = checkout
     .create("dropin", {
