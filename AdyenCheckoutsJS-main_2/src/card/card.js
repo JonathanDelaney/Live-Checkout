@@ -57,8 +57,9 @@ getClientKey().then((clientKey) => {
             console.log(value);
           },
           // brands: [],
-          // hasHolderName: true,
-          // holderNameRequired: true
+          hasHolderName: true,
+          holderNameRequired: true,
+          billingAddressRequired: true
       }).mount('#card-container');
 
       // const custompaybutton = document.getElementById("custompaybutton");
