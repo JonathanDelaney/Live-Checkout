@@ -63,7 +63,7 @@ getClientKey().then((clientKey) => {
         },
         onAuthorized: (resolve, reject, event) => {
             console.log('Apple Pay onAuthorized', JSON.stringify(event.payment));
-            document.getElementById('response').innerText = JSON.stringify(event, null, 2);
+            document.getElementById('response').innerText = JSON.stringify(event.payment, null, 2);
             resolve();
         },
         onShippingContactSelected: (resolve, reject, event) => {
