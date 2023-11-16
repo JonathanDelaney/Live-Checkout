@@ -51,7 +51,7 @@ getClientKey().then((clientKey) => {
             }
           }
       });
-      const cardComponent = checkout.create('bcmc_mobile', {
+      const cardComponent = checkout.create('card', {
           showPayButton: true,
           onBinLookup: (value) => {
             console.log(value);
