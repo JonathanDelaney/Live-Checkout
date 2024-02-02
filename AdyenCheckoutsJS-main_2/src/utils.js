@@ -16,13 +16,13 @@ const paymentMethodsConfig = {
   shopperReference: shopperReference,
   amount: {
     value: 100,
-    currency: "USD",
+    currency: "EUR",
   }
 };
 
 let paymentsDefaultConfig = {
     amount: {
-        currency: "USD",
+        currency: "EUR",
         value: 100
     },
     returnUrl: setReturnUrl(),
