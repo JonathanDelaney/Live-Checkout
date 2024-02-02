@@ -56,6 +56,7 @@ getClientKey().then((clientKey) => {
           currency: "EUR",
           value: 100
         },
+        supportedNetworks: [maestro, mc, visa],
        // buttonType: 'buy',
         onClick: (resolve, reject) => {
             console.log('Apple Pay - Button clicked');
