@@ -81,9 +81,9 @@ getClientKey().then((clientKey) => {
         //       throw Error(error);
         //     });
         // },
-        // onError: (error, component) => {
-        //   console.error(error.name, error.message, error.stack, component);
-        // },
+        onError: (error, component) => {
+          console.error(error, component);
+        },
         // onChange: (state, component) => {
         // },
         // beforeSubmit: (data, dropin, actions) => {
