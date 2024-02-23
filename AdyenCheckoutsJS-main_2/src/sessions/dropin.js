@@ -9,7 +9,7 @@ getClientKey().then((clientKey) => {
     sessionsDropin().then((response) => {
       const configuration = {
         environment: "live", // Change to 'live' for the live environment.
-        clientKey: "live_YLJL267P4NCBVMO7UYRVNJPG6UG5MDHN", // Public key used for client-side authentication: https://docs.adyen.com/development-resources/client-side-authentication
+        clientKey: clientKey, // Public key used for client-side authentication: https://docs.adyen.com/development-resources/client-side-authentication
         session: {
           id: response.id, // Unique identifier for the payment session.
           sessionData: response.sessionData, // The payment session data.
