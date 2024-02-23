@@ -39,7 +39,7 @@ let paymentsDefaultConfig = {
     // storePaymentMethodMode: "enabled",
     // storePaymentMethod : true,
     // redirectFromIssuerMethod: "GET",
-    // recurringProcessingModel : "CardOnFile",
+    recurringProcessingModel : "Subscription",
     // authenticationData : {
     //
     // },
