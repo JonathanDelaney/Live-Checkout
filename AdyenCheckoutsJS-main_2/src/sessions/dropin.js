@@ -18,6 +18,9 @@ getClientKey().then((clientKey) => {
           console.log(result);
           updateResponseContainer(result);
         },
+        onError: (error, component) => {
+          console.error(error, component);
+        },
         paymentMethodsConfiguration: {
           card: {
             enableStoreDetails: true
@@ -81,9 +84,6 @@ getClientKey().then((clientKey) => {
         //       throw Error(error);
         //     });
         // },
-        onError: (error, component) => {
-          console.error(error, component);
-        },
         // onChange: (state, component) => {
         // },
         // beforeSubmit: (data, dropin, actions) => {
