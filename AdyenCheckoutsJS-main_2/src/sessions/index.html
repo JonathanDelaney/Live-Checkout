@@ -7,10 +7,10 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-<!--     <meta
+    <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self' https://live-checkout.herokuapp.com https://*.adyen.com; frame-src https://*.adyen.com; script-src https://www.paypal.com/ https://*.adyen.com https://pay.google.com/ https://live-checkout.herokuapp.com; img-src: https://*.adyen.com; style-src https://*.adyen.com;"
-    /> -->
+      content="default-src 'self' https://live-checkout.herokuapp.com https://*.adyen.com; frame-src 'nonce-rAnd0m'; script-src https://www.paypal.com/ https://*.adyen.com https://pay.google.com/ https://live-checkout.herokuapp.com 'unsafe-inline'; img-src: https://*.adyen.com; style-src https://*.adyen.com 'unsafe-inline';"
+    />
     <title>Adyen Checkout Components sample code</title>
     <link
       rel="stylesheet"
@@ -30,7 +30,7 @@
             check the "dropin.js" file for implementation references!
           </h3>
           <div class="payment-method">
-            <div id="dropin-container">
+            <div nonce="rAnd0m" id="dropin-container">
               <!-- Drop-in will be rendered here -->
             </div>
             <div id="result-container"></div>
