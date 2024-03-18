@@ -5,6 +5,10 @@ const asyncCheckout = async () => {
   const paymentMethodsResponse = await getPaymentMethods();
   const configuration = {
     environment: "live",
+    amount: {
+        value: 0,
+        currency: 'EUR'
+    },
     clientKey: clientKey, // Mandatory. clientKey from Customer Area
     paymentMethodsResponse,
     onChange: (state, component) => {
@@ -71,10 +75,7 @@ const asyncCheckout = async () => {
     .create("dropin", {
       showStorePaymentMethodButton: true,
       showRemovePaymentMethodButton: true,
-      amount: {
-        value: 0,
-        currency: 'EUR'
-    },
+      
       //showPayButton: true,
       onSelect: (component) => {
         console.log(component.props.type);
