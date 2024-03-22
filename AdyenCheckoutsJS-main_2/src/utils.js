@@ -11,8 +11,8 @@ const shopperReference = "xyz";
 const paymentMethodsConfig = {
   reference: Math.random(),
   merchantAccount: "JoneAzpillaga",
-  countryCode: "NL",
-  shopperLocale: "en-GB",
+  countryCode: "FR",
+  shopperLocale: "fr-FR",
   shopperReference: shopperReference,
   amount: {
     value: 0,
