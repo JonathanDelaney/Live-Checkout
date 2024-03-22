@@ -16,7 +16,7 @@ const paymentMethodsConfig = {
   shopperReference: shopperReference,
   amount: {
     value: 0,
-    currency: "EUR",
+    currency: "SEK",
   }
 };
 
