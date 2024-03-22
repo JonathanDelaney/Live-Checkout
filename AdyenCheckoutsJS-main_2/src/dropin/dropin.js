@@ -48,6 +48,9 @@ const asyncCheckout = async () => {
       card: {
         enableStoreDetails: true
       },
+      klarna_account:{
+        name: "Achter maintenant"
+      },
       applepay: {
         countryCode: "NL",
         amount: {
