@@ -47,12 +47,12 @@ let paymentsDefaultConfig = {
         executeThreeD : true,
         allow3DS2: true
     },
-    authenticationData: {
-      attemptAuthentication: "always",
-      threeDSRequestData: {
-        nativeThreeDS: "preferred"
-      }
-    }
+    // authenticationData: {
+    //   attemptAuthentication: "always",
+    //   threeDSRequestData: {
+    //     nativeThreeDS: "preferred"
+    //   }
+    // }
   //  billingAddress:{
   //     city:"Ankeborg",
   //     country:"SE",
