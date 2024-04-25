@@ -37,10 +37,10 @@ getClientKey().then((clientKey) => {
             }
           }
         },
-        beforeSubmit: (data, component, actions) => {
-          delete data.origin;
-          actions.resolve(data);
-        },
+        // beforeSubmit: (data, component, actions) => {
+        //   delete data.origin;
+        //   actions.resolve(data);
+        // },
         // onSubmit: (state, dropin) => {
         //   console.log("onSubmit");
         //   paymentsDefaultConfig.amount = {
