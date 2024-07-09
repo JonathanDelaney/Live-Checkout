@@ -15,7 +15,7 @@ const paymentMethodsConfig = {
   shopperLocale: "en-GB",
   shopperReference: shopperReference,
   amount: {
-    value: 100,
+    value: 0,
     currency: "EUR",
   }
 };
@@ -23,7 +23,7 @@ const paymentMethodsConfig = {
 let paymentsDefaultConfig = {
     amount: {
         currency: "EUR",
-        value: 100
+        value: 0
     },
     returnUrl: setReturnUrl(),
     // blockedPaymentMethods: ["scheme"],
